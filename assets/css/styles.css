@@ -1,4 +1,96 @@
+/* 
+  _____.__                                       .__    .___
+_/ ____\  |   ____ ___  ___           ___________|__| __| _/
+\   __\|  | _/ __ \\  \/  /  ______  / ___\_  __ \  |/ __ | 
+ |  |  |  |_\  ___/ >    <  /_____/ / /_/  >  | \/  / /_/ | 
+ |__|  |____/\___  >__/\_ \         \___  /|__|  |__\____ | 
+                 \/      \/        /_____/               \/ 
+
+  All classes are prefixed with fg- to avoid naming collisions
+  A lot of the ideas for this were based off of http://flexboxgrid.com/
+*/
+.fg-box {
+  background: orange; }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+
+/* Container */
+.fg-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5px 0 5px; }
+
+/* row */
+.fg-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  /* flex-direction: row; flex-wrap: wrap; */
+  margin: 0 5px 0 5px; }
+
+[class^="fg-col"] {
+  flex: 0 0 auto;
+  padding: 0 5px 0 5px;
+  background: red; }
+
+.fg-col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%; }
+
+.fg-col-1 {
+  flex-basis: 8.333%;
+  max-width: 8.333%; }
+
+.fg-col-name-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%; }
+
+.fg-col-name-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%; }
+
+.fg-col-name-3 {
+  flex-basis: 25.0%;
+  max-width: 25.0%; }
+
+.fg-col-name-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%; }
+
+.fg-col-name-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%; }
+
+.fg-col-name-6 {
+  flex-basis: 50.0%;
+  max-width: 50.0%; }
+
+.fg-col-name-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%; }
+
+.fg-col-name-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%; }
+
+.fg-col-name-9 {
+  flex-basis: 75.0%;
+  max-width: 75.0%; }
+
+.fg-col-name-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%; }
+
+.fg-col-name-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%; }
+
+.fg-col-name-12 {
+  flex-basis: 100.0%;
+  max-width: 100.0%; }
+
+/* Responsive Breakpoints */

@@ -1,5 +1,70 @@
+/* 
+  _____.__                                       .__    .___
+_/ ____\  |   ____ ___  ___           ___________|__| __| _/
+\   __\|  | _/ __ \\  \/  /  ______  / ___\_  __ \  |/ __ | 
+ |  |  |  |_\  ___/ >    <  /_____/ / /_/  >  | \/  / /_/ | 
+ |__|  |____/\___  >__/\_ \         \___  /|__|  |__\____ | 
+                 \/      \/        /_____/               \/ 
+
+  All classes are prefixed with fg- to avoid naming collisions
+  A lot of the ideas for this were based off of http://flexboxgrid.com/
+*/
+@import 'styleguide';
+
+$proj: 'fg';
+$gutter-width: 5px;
+$outer-margin: 5px;
+$gutter-comp: calc($gutter-width * 0.5);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* Container */
+.#{$proj}-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $outer-margin 0 $outer-margin;
+}
+
+/* row */
+.#{$proj}-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap; /* flex-direction: row; flex-wrap: wrap; */
+  margin: 0 5px 0 5px;
+}
+// .col-xs-1,
+[class^="fg-col"] {
+  flex: 0 0 auto;
+  padding: 0 $outer-margin 0 $outer-margin;
+  background: red;
+}
+
+// based off of a 12 column grid system
+
+.fg-col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+@mixin col-width($width) {
+  flex-basis: $width; 
+  max-width: $width;
+}
+
+.fg-col-1 { @include col-width(8.333%); }
+
+@mixin make-grid($name) {
+  @for $i from 1 through 12 {
+    .fg-col-#{$name}-#{$i} { @include col-width(($i * 8.3333333%)); }
+  }
+}
+
+@include make-grid('name')
+
+
+/* Responsive Breakpoints */
