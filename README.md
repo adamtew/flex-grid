@@ -1,6 +1,6 @@
 # flex-grid
 
-Uses gulp for building the css and serving content
+Gulp is used for building the css. You may want to install gulp globally `npm install -g gulp` if you plan on editing the codebase
 
 ```
 npm install
