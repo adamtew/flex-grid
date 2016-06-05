@@ -10,7 +10,7 @@ _/ ____\  |   ____ ___  ___           ___________|__| __| _/
   A lot of the ideas for this were based off of http://flexboxgrid.com/
 */
 @import 'styleguide';
-
+@import 'variables';
 $proj: 'fg';
 $gutter-width: 5px;
 $outer-margin: 5px;
@@ -32,39 +32,86 @@ $gutter-comp: calc($gutter-width * 0.5);
 /* row */
 .#{$proj}-row {
   display: flex;
-  flex: 0 1 auto;
+  // flex: 0 1 auto;
+  flex: 0 1 100%;
   flex-flow: row wrap; /* flex-direction: row; flex-wrap: wrap; */
-  margin: 0 5px 0 5px;
+  margin: 1px 0px 1px 0px;
+  // border: 1px solid gray;
+  justify-content: center;
+
+  @media screen and (max-width: 648px) {
+    // flex-direction: column;
+  }
 }
 // .col-xs-1,
-[class^="fg-col"] {
-  flex: 0 0 auto;
-  padding: 0 $outer-margin 0 $outer-margin;
-  background: red;
+[class^="#{$proj}-col"] {
+  // flex: 0 0 auto;
+  max-width: 100%;
+  padding: 0 $outer-margin 0 0;
+  // background: red;
+}
+
+[class^="#{$proj}-col"]:last-of-type {
+  padding: 0;
 }
 
 // based off of a 12 column grid system
 
-.fg-col {
+.#{$proj}-col {
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%;
 }
 
+
+
+
+
 @mixin col-width($width) {
   flex-basis: $width; 
   max-width: $width;
 }
-
-.fg-col-1 { @include col-width(8.333%); }
-
-@mixin make-grid($name) {
-  @for $i from 1 through 12 {
-    .fg-col-#{$name}-#{$i} { @include col-width(($i * 8.3333333%)); }
+// @include col-width(($i * 8.3333333%));
+$max-screen-size: 1440px;
+// makes an individual grid
+@mixin make-grid($name, $width) {
+  $grid: 12;
+  @for $i from 1 through $grid {
+    $grid-width: $i * (100 / $grid) + %;
+    .#{$proj}-col-#{$name}-#{$i} {
+    // .#{$proj}-col-#{$i} {
+      flex-basis: $grid-width;
+      max-width: $grid-width;
+      content: "#{$name}";
+      &:after {
+      }
+      @media screen and (max-width: $width) {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
   }
 }
 
-@include make-grid('name')
+@include make-grid('', 0px);
 
+@each $point, $width in $breakpoints {
+  @include make-grid($point, $width);
+}
 
+// hide at a certain breakpoint
+@each $point, $width in $breakpoints {
+  .hide-at-#{$point} {
+    @media screen and (max-width: $width) {
+      display: none;
+    }
+  }
+}
+
+// make a list of grid systems
+// $list: (adam james tew is a person);
+// @each $word in $list {
+//   @include make-grid($word)
+// }
 /* Responsive Breakpoints */

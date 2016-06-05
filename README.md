@@ -15,4 +15,9 @@ npm start
 // navigate to localhost:7890 in a browser
 ```
 
+
+* The classes are all prefixed with `fg-` but you can change that in the scss and rebuild by changing the `$proj` variable in `assets/scss/styles.scss`.
+
+
 A lot of thanks to http://flexboxgrid.com/ for ideas
+

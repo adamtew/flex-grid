@@ -1,5 +1,38 @@
-$color: orange;
+$color: #3EFEFA;
+
+h1 {
+  margin: 20px 0 0 10px;
+  font-size: 50px;
+}
+
+pre {
+  // background: gray
+}
+
+section {
+  min-height: 100vh;
+  background: gray;
+}
+
+.page-container {
+  width: 100%;
+  padding: 5%;
+}
+
+.fg-row-container {
+  padding: 0 6%;
+}
 
 .fg-box {
   background: $color;
+  padding: 5px 0;
+  text-align: center;
 }
+
+.fg-sidebar {
+  height: 230px;
+  background: salmon;
+  padding: 5px 0;
+  text-align: center;
+}
+

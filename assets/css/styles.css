@@ -9,8 +9,31 @@ _/ ____\  |   ____ ___  ___           ___________|__| __| _/
   All classes are prefixed with fg- to avoid naming collisions
   A lot of the ideas for this were based off of http://flexboxgrid.com/
 */
+h1 {
+  margin: 20px 0 0 10px;
+  font-size: 50px; }
+
+section {
+  min-height: 100vh;
+  background: gray; }
+
+.page-container {
+  width: 100%;
+  padding: 5%; }
+
+.fg-row-container {
+  padding: 0 6%; }
+
 .fg-box {
-  background: orange; }
+  background: #3EFEFA;
+  padding: 5px 0;
+  text-align: center; }
+
+.fg-sidebar {
+  height: 230px;
+  background: salmon;
+  padding: 5px 0;
+  text-align: center; }
 
 * {
   box-sizing: border-box;
@@ -26,71 +49,762 @@ _/ ____\  |   ____ ___  ___           ___________|__| __| _/
 /* row */
 .fg-row {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 1 100%;
   flex-flow: row wrap;
   /* flex-direction: row; flex-wrap: wrap; */
-  margin: 0 5px 0 5px; }
+  margin: 1px 0px 1px 0px;
+  justify-content: center; }
 
 [class^="fg-col"] {
-  flex: 0 0 auto;
-  padding: 0 5px 0 5px;
-  background: red; }
+  max-width: 100%;
+  padding: 0 5px 0 0; }
+
+[class^="fg-col"]:last-of-type {
+  padding: 0; }
 
 .fg-col {
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%; }
 
-.fg-col-1 {
-  flex-basis: 8.333%;
-  max-width: 8.333%; }
-
-.fg-col-name-1 {
+.fg-col--1 {
   flex-basis: 8.33333%;
-  max-width: 8.33333%; }
+  max-width: 8.33333%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-2 {
+.fg-col--2 {
   flex-basis: 16.66667%;
-  max-width: 16.66667%; }
+  max-width: 16.66667%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-3 {
-  flex-basis: 25.0%;
-  max-width: 25.0%; }
+.fg-col--3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-4 {
+.fg-col--4 {
   flex-basis: 33.33333%;
-  max-width: 33.33333%; }
+  max-width: 33.33333%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-5 {
+.fg-col--5 {
   flex-basis: 41.66667%;
-  max-width: 41.66667%; }
+  max-width: 41.66667%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-6 {
-  flex-basis: 50.0%;
-  max-width: 50.0%; }
+.fg-col--6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-7 {
+.fg-col--7 {
   flex-basis: 58.33333%;
-  max-width: 58.33333%; }
+  max-width: 58.33333%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-8 {
+.fg-col--8 {
   flex-basis: 66.66667%;
-  max-width: 66.66667%; }
+  max-width: 66.66667%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-9 {
-  flex-basis: 75.0%;
-  max-width: 75.0%; }
+.fg-col--9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-10 {
+.fg-col--10 {
   flex-basis: 83.33333%;
-  max-width: 83.33333%; }
+  max-width: 83.33333%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-11 {
+.fg-col--11 {
   flex-basis: 91.66667%;
-  max-width: 91.66667%; }
+  max-width: 91.66667%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
 
-.fg-col-name-12 {
-  flex-basis: 100.0%;
-  max-width: 100.0%; }
+.fg-col--12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: ""; }
+  @media screen and (max-width: 0px) {
+    .fg-col--12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: "phone"; }
+  @media screen and (max-width: 400px) {
+    .fg-col-phone-12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-phone-lg-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: "phone-lg"; }
+  @media screen and (max-width: 648px) {
+    .fg-col-phone-lg-12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: "tablet"; }
+  @media screen and (max-width: 767px) {
+    .fg-col-tablet-12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-tablet-lg-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: "tablet-lg"; }
+  @media screen and (max-width: 991px) {
+    .fg-col-tablet-lg-12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-1 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-3 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-5 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-8 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-9 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-11 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+.fg-col-desktop-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  content: "desktop"; }
+  @media screen and (max-width: 1300px) {
+    .fg-col-desktop-12 {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0; } }
+
+@media screen and (max-width: 400px) {
+  .hide-at-phone {
+    display: none; } }
+
+@media screen and (max-width: 648px) {
+  .hide-at-phone-lg {
+    display: none; } }
+
+@media screen and (max-width: 767px) {
+  .hide-at-tablet {
+    display: none; } }
+
+@media screen and (max-width: 991px) {
+  .hide-at-tablet-lg {
+    display: none; } }
+
+@media screen and (max-width: 1300px) {
+  .hide-at-desktop {
+    display: none; } }
 
 /* Responsive Breakpoints */

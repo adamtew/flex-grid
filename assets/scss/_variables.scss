@@ -1,0 +1,11 @@
+$breakpoints: (
+  phone: 400px,
+  phone-lg: 648px,
+  tablet: 767px,
+  tablet-lg: 991px,
+  desktop: 1300px
+);
+
+@function breakpoint($point) {
+  @return map-get($breakpoints, $point)
+}
