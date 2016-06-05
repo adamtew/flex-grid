@@ -1,8 +1,29 @@
-$color: #3EFEFA;
+$colors: (
+  body-background: #686F6D,
+  content-background: #69BCA0,
+  article: #39FFBC,
+  sidebar: #BC7969,
+  header: #6F3628
+);
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+
+* {
+  font-family: "Helvetica Neue";
+  -webkit-font-smoothing: antialiased;
+}
+
+
+body {
+  background: color(body-background);
+}
 
 h1 {
-  margin: 20px 0 0 10px;
-  font-size: 50px;
+  margin: 0 0 30px 10px;
+  font-size: 30px;
 }
 
 pre {
@@ -11,28 +32,45 @@ pre {
 
 section {
   min-height: 100vh;
-  background: gray;
+  background: color(content-background);
+}
+
+[class^="fg-"] {
+  border-radius: 5px;
 }
 
 .page-container {
   width: 100%;
-  padding: 5%;
+  padding: 0 5%;
 }
 
 .fg-row-container {
   padding: 0 6%;
 }
 
-.fg-box {
-  background: $color;
-  padding: 5px 0;
-  text-align: center;
-}
-
 .fg-sidebar {
   height: 230px;
-  background: salmon;
-  padding: 5px 0;
+  background: color(sidebar);
   text-align: center;
 }
 
+.fg-article {
+  text-align: center;
+  background: color(article);
+  margin: 0 0 10px 0;
+  height: 50px;
+}
+
+.fg-header {
+  background: color(header);
+  height: 100px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.fg-footer {
+  background: color(header);
+  margin: 10px 0;
+  height: 60px;
+  text-align: center;
+}

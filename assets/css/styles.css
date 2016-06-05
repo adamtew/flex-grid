@@ -9,30 +9,52 @@ _/ ____\  |   ____ ___  ___           ___________|__| __| _/
   All classes are prefixed with fg- to avoid naming collisions
   A lot of the ideas for this were based off of http://flexboxgrid.com/
 */
+* {
+  font-family: "Helvetica Neue";
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  background: #686F6D; }
+
 h1 {
-  margin: 20px 0 0 10px;
-  font-size: 50px; }
+  margin: 0 0 30px 10px;
+  font-size: 30px; }
 
 section {
   min-height: 100vh;
-  background: gray; }
+  background: #69BCA0; }
+
+[class^="fg-"] {
+  border-radius: 5px; }
 
 .page-container {
   width: 100%;
-  padding: 5%; }
+  padding: 0 5%; }
 
 .fg-row-container {
   padding: 0 6%; }
 
-.fg-box {
-  background: #3EFEFA;
-  padding: 5px 0;
-  text-align: center; }
-
 .fg-sidebar {
   height: 230px;
-  background: salmon;
-  padding: 5px 0;
+  background: #BC7969;
+  text-align: center; }
+
+.fg-article {
+  text-align: center;
+  background: #39FFBC;
+  margin: 0 0 10px 0;
+  height: 50px; }
+
+.fg-header {
+  background: #6F3628;
+  height: 100px;
+  margin: 0 0 15px 0;
+  text-align: center; }
+
+.fg-footer {
+  background: #6F3628;
+  margin: 10px 0;
+  height: 60px;
   text-align: center; }
 
 * {
@@ -49,10 +71,9 @@ section {
 /* row */
 .fg-row {
   display: flex;
-  flex: 0 1 100%;
+  flex: 0 1 auto;
   flex-flow: row wrap;
   /* flex-direction: row; flex-wrap: wrap; */
-  margin: 1px 0px 1px 0px;
   justify-content: center; }
 
 [class^="fg-col"] {

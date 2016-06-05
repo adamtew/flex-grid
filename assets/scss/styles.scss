@@ -32,11 +32,9 @@ $gutter-comp: calc($gutter-width * 0.5);
 /* row */
 .#{$proj}-row {
   display: flex;
-  // flex: 0 1 auto;
-  flex: 0 1 100%;
+  flex: 0 1 auto;
+  // flex: 0 1 100%;
   flex-flow: row wrap; /* flex-direction: row; flex-wrap: wrap; */
-  margin: 1px 0px 1px 0px;
-  // border: 1px solid gray;
   justify-content: center;
 
   @media screen and (max-width: 648px) {
