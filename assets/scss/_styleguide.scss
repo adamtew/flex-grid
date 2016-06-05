@@ -22,12 +22,8 @@ body {
 }
 
 h1 {
-  margin: 0 0 30px 10px;
+  margin: 0 0 30px 0;
   font-size: 30px;
-}
-
-pre {
-  // background: gray
 }
 
 section {
@@ -37,15 +33,25 @@ section {
 
 [class^="fg-"] {
   border-radius: 5px;
+  @media screen and (max-width: breakpoint(phone-lg)) {
+  border-radius: 0;
+  }
 }
 
 .page-container {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 1%;
+  @media screen and (max-width: breakpoint(phone-lg)) {
+    padding: 0;
+  }
+
 }
 
 .fg-row-container {
   padding: 0 6%;
+  @media screen and (max-width: breakpoint(phone-lg)) {
+    padding: 0;
+  }
 }
 
 .fg-sidebar {

@@ -17,7 +17,7 @@ body {
   background: #686F6D; }
 
 h1 {
-  margin: 0 0 30px 10px;
+  margin: 0 0 30px 0;
   font-size: 30px; }
 
 section {
@@ -26,13 +26,22 @@ section {
 
 [class^="fg-"] {
   border-radius: 5px; }
+  @media screen and (max-width: 648px) {
+    [class^="fg-"] {
+      border-radius: 0; } }
 
 .page-container {
   width: 100%;
-  padding: 0 5%; }
+  padding: 0 1%; }
+  @media screen and (max-width: 648px) {
+    .page-container {
+      padding: 0; } }
 
 .fg-row-container {
   padding: 0 6%; }
+  @media screen and (max-width: 648px) {
+    .fg-row-container {
+      padding: 0; } }
 
 .fg-sidebar {
   height: 230px;
@@ -65,8 +74,7 @@ section {
 /* Container */
 .fg-container {
   margin-left: auto;
-  margin-right: auto;
-  padding: 0 5px 0 5px; }
+  margin-right: auto; }
 
 /* row */
 .fg-row {
